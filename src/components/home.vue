@@ -45,19 +45,19 @@ getTables()
         <div class="tables">
 
             <el-table :data="collectDatas" style="width: 100%" height="100%">
-                <el-table-column prop="FlowRate" label="FlowRate" show-overflow-tooltip />
-                <el-table-column prop="ScanTime" label="ScanTime"  show-overflow-tooltip width="160" />
+                <el-table-column prop="ScanTime" label="ScanTime"  show-overflow-tooltip width="180" />
+                <el-table-column prop="FrequencyCount" label="FrequencyCount" show-overflow-tooltip width="80" />
+                <el-table-column prop="MaxFrequency" label="MaxFrequency" show-overflow-tooltip width="120" />
+                <el-table-column prop="MinFrequency" label="MinFrequency" show-overflow-tooltip width="120" />
+                <el-table-column prop="PowerValues" label="PowerValues" width="300" show-overflow-tooltip  />
+                <el-table-column prop="RBW" label="RBW" show-overflow-tooltip />
+                <el-table-column prop="Harmonic" label="Harmonic" show-overflow-tooltip />
                 <el-table-column prop="Duration" label="Duration" show-overflow-tooltip />
+                <el-table-column prop="FlowRate" label="FlowRate" show-overflow-tooltip />
                 <el-table-column prop="AverageMag" label="AverageMag" show-overflow-tooltip />
                 <el-table-column prop="ChannelPower" label="ChannelPower" show-overflow-tooltip />
                 <el-table-column prop="FlowVolume" label="FlowVolume" show-overflow-tooltip />
-                <el-table-column prop="FrequencyCount" label="FrequencyCount" show-overflow-tooltip />
-                <el-table-column prop="Harmonic" label="Harmonic" show-overflow-tooltip />
-                <el-table-column prop="MaxFrequency" label="MaxFrequency" show-overflow-tooltip />
-                <el-table-column prop="MinFrequency" label="MinFrequency" show-overflow-tooltip />
-                <el-table-column prop="PowerValues" label="PowerValues" width="300" show-overflow-tooltip  />
                 <el-table-column prop="Pressure" label="Pressure"  show-overflow-tooltip />
-                <el-table-column prop="RBW" label="RBW" show-overflow-tooltip />
                 <el-table-column prop="SpecName" label="SpecName" show-overflow-tooltip />
                 <el-table-column prop="Stdev" label="Stdev" show-overflow-tooltip />
                 <el-table-column prop="SummaryOrNot" label="SummaryOrNot" show-overflow-tooltip />
