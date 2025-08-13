@@ -94,10 +94,10 @@ const onMenuClick = (val) => {
 <template>
     <div class="home-views">
         <el-container style="height: 100%; display: flex; flex-direction: column">
-            <el-header style="margin-bottom: 4px">
+            <el-header>
                 <div class="title">
                     <div style="display: flex; align-items: center">
-                        <img src="/logo.png" width="160px" height="56px" alt="" />
+                        <img src="/logo.png" width="160px" height="60px" alt="" />
                         <span style="font-size: 20px; margin-left: 8px">OYNER SYSTEM</span>
                     </div>
                     <div class="right">
@@ -267,7 +267,7 @@ const onMenuClick = (val) => {
     .title {
         width: 100%;
         border-bottom: 1px solid #dfdfdf;
-        padding-bottom: 6px;
+        padding-bottom: 1px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -278,7 +278,6 @@ const onMenuClick = (val) => {
         img {
             display: block;
         }
-        margin-bottom: 6px;
     }
     .pager {
         padding: 12px 0 0;
