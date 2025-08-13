@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { get } from '../utils/api'
 import { Refresh } from '@element-plus/icons-vue'
 
-
 const showLoading = ref(true)
 const currentPage = ref(1)
 const pageSize = ref(20)
@@ -26,6 +25,7 @@ const getDatas = async () => {
         console.log(err)
     } finally {
         showLoading.value = false
+        refreshDisabled.value = false
     }
 }
 
@@ -75,9 +75,10 @@ const onCurrentChange = (val) => {
 }
 
 const optionss = ref({ popperClass: 'mypopper' })
-
+const refreshDisabled = ref(false)
 const onRefresh = () => {
-    showLoading.value = false
+    showLoading.value = true
+    refreshDisabled.value = true
     getDatas()
 }
 
@@ -109,7 +110,12 @@ const onMenuClick = (val) => {
                                 :value="item.DeviceName"
                             />
                         </el-select> -->
-                        <el-button type="primary" @click="onRefresh" :icon="Refresh" style="margin-left: 10px"
+                        <el-button
+                            type="primary"
+                            @click="onRefresh"
+                            :disabled="refreshDisabled"
+                            :icon="Refresh"
+                            style="margin-left: 10px"
                             >刷新</el-button
                         >
                     </div>
@@ -125,7 +131,11 @@ const onMenuClick = (val) => {
                             mode="vertical"
                             class="el-menu-vertical-demo"
                         >
-                            <el-menu-item v-for="(item, index) in deviceOptions" @click="onMenuClick(item)" :index="String(index)">
+                            <el-menu-item
+                                v-for="(item, index) in deviceOptions"
+                                @click="onMenuClick(item)"
+                                :index="String(index)"
+                            >
                                 <template #title>{{ item.label }}</template>
                             </el-menu-item></el-menu
                         >
@@ -278,6 +288,9 @@ const onMenuClick = (val) => {
 }
 </style>
 <style>
+button:focus {
+    outline: none;
+}
 .myheader {
     .cell {
         max-width: 100%;
