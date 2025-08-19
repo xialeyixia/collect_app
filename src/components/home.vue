@@ -60,6 +60,9 @@ const getTables = async () => {
 getTables()
 
 const formatterNumber = (row, column, cellValue) => {
+    if (cellValue === 0) {
+        return 0
+    }
     return cellValue ? cellValue.toFixed(3) : ''
 }
 
